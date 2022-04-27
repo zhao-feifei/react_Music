@@ -1,6 +1,6 @@
 /* @import '~antd/dist/antd.css'; */
 @import '~normalize.css';
-
+@import '~antd/dist/antd.css';
 /* 样式的重置 */
 body,
 html,

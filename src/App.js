@@ -8,6 +8,7 @@ import HYAppHeader from '@/components/app-header';
 
 import '@/assets/css/reset.css';
 import { HashRouter } from 'react-router-dom';
+
 const App = memo(() => {
   return (
     <HashRouter>
