@@ -1,4 +1,11 @@
 {
-  "cSpell.words": ["antd", "browserslist", "covor", "craco"],
+  "cSpell.words": [
+    "antd",
+    "browserslist",
+    "covor",
+    "craco",
+    "noopener",
+    "noreferrer"
+  ],
   "compile-hero.disable-compile-files-on-did-save-code": false
 }
