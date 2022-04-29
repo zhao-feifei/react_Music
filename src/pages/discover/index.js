@@ -1,12 +1,21 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import { DiscoverWrapper, TopMenu } from './style';
 import { dicoverMenu } from '@/common/local-data';
 import { NavLink } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
+import request from '@/services/request';
 
 const HYDiscover = memo(function (props) {
+  useEffect(() => {
+    request({
+      url: '/banner',
+    }).then((res) => {
+      console.log(res);
+    });
+  });
+
   const { route } = props;
-  console.log(route.routes);
+
   return (
     <DiscoverWrapper>
       <div className="top">
