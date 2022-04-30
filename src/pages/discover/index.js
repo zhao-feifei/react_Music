@@ -6,13 +6,13 @@ import { renderRoutes } from 'react-router-config';
 import request from '@/services/request';
 
 const HYDiscover = memo(function (props) {
-  useEffect(() => {
-    request({
-      url: '/banner',
-    }).then((res) => {
-      console.log(res);
-    });
-  });
+  // useEffect(() => {
+  //   request({
+  //     url: '/banner',
+  //   }).then((res) => {
+  //     console.log(res);
+  //   });
+  // });
 
   const { route } = props;
 
