@@ -9,7 +9,9 @@ const HYAlbumCover = memo((props) => {
     <AlbumWrapper size={size} width={width} bgp={bgp}>
       <div className="album-image">
         <img src={getSizeImage(info.picUrl, size)} alt=""></img>
-        <a href="/todo" className="cover image_cover"></a>
+        <a href="/todo" className="cover image_cover">
+          {info.title}
+        </a>
       </div>
       <div className="album-info">
         <div className="name text-nowrap">{info.name}</div>

@@ -2,7 +2,6 @@ import React, { memo, useEffect, useRef } from 'react';
 import { useDispatch, shallowEqual, useSelector } from 'react-redux';
 
 import { Carousel } from 'antd';
-import { getNewAlbums } from '@/services/recommend';
 import HYThemeHeaderRCM from '@/components/theme-header-rcm';
 import { getNewAlbumsAction } from '../../store/actionCreators';
 import { AlbumWrapper } from './style';
