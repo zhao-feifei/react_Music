@@ -7,6 +7,7 @@ import store from './store';
 
 import HYAppFooter from '@/components/app-footer';
 import HYAppHeader from '@/components/app-header';
+import HYAppPlayerBar from '@/pages/player/app-player-bar';
 
 import '@/assets/css/reset.css';
 import { HashRouter } from 'react-router-dom';
@@ -18,6 +19,7 @@ const App = memo(() => {
         <HYAppHeader></HYAppHeader>
         {renderRoutes(routes)}
         <HYAppFooter></HYAppFooter>
+        <HYAppPlayerBar></HYAppPlayerBar>
       </HashRouter>
     </Provider>
   );
