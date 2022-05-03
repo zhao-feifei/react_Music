@@ -2,12 +2,12 @@ import React, { memo, useState, useEffect, useRef, useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
 import { getSizeImage, formatDate, getPlaySong } from '@/utils/format-utils';
-// import {
-//   getSongDetailAction,
-//   changeSequenceAction,
-//   changeCurrentIndexAndSongAction,
-//   changeCurrentLyricIndexAction,
-// } from '../store/actionCreators';
+import {
+  getSongDetailAction,
+  // changeSequenceAction,
+  // changeCurrentIndexAndSongAction,
+  // changeCurrentLyricIndexAction,
+} from '../store/actionCreator';
 
 import { message } from 'antd';
 import { NavLink } from 'react-router-dom';
@@ -15,6 +15,12 @@ import { Slider } from 'antd';
 import { PlaybarWrapper, Control, PlayInfo, Operator } from './style';
 
 const HYAppPlayerBar = memo(() => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getSongDetailAction(167876));
+  }, [dispatch]);
+
   return (
     <PlaybarWrapper className="sprite_player">
       <div className="content wrap-v2">
