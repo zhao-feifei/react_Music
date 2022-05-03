@@ -15,11 +15,20 @@ import { Slider } from 'antd';
 import { PlaybarWrapper, Control, PlayInfo, Operator } from './style';
 
 const HYAppPlayerBar = memo(() => {
+  const { currentSong } = useSelector((state) => ({
+    currentSong: state.getIn(['player', 'currentSong']),
+  }));
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getSongDetailAction(167876));
   }, [dispatch]);
+
+  const picUrl = currentSong.al && currentSong.al.picUrl;
+  const singerName = currentSong.ar && currentSong.ar[0].name;
+  const duration = currentSong.dt || 0;
+  const showDuration = formatDate(duration, 'mm:ss');
 
   return (
     <PlaybarWrapper className="sprite_player">
@@ -32,14 +41,14 @@ const HYAppPlayerBar = memo(() => {
         <PlayInfo>
           <div className="image">
             <NavLink to="/discover/player">
-              <img src={getSizeImage(35)} alt="" />
+              <img src={getSizeImage(picUrl, 35)} alt="" />
             </NavLink>
           </div>
           <div className="info">
             <div className="song">
-              <span className="song-name">111</span>
+              <span className="song-name">{currentSong.name}</span>
               <a href="#/" className="singer-name">
-                222
+                {singerName}
               </a>
             </div>
             <div className="progress">
@@ -47,7 +56,7 @@ const HYAppPlayerBar = memo(() => {
               <div className="time">
                 <span className="now-time"></span>
                 <span className="divider">/</span>
-                <span className="duration"></span>
+                <span className="duration">{showDuration}</span>
               </div>
             </div>
           </div>
